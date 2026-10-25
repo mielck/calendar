@@ -1,0 +1,8 @@
+services:
+  app:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    tmpfs:
+      - /tmp
+      - /run:mode=755,uid=1000,gid=1000
