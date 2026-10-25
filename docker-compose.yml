@@ -1,8 +1,6 @@
 services:
   app:
-    image: nginx:alpine
-    ports:
-      - "8080:80"
+    image: python:3.12-alpine
+    command: ["sh", "-c", "sleep infinity"]
     tmpfs:
-      - /tmp
-      - /run:mode=755,uid=1000,gid=1000
+      - /probe-tmpfs:size=64m,nr_inodes=1000,mode=1770,uid=1000,gid=1000
